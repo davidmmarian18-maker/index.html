@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: pink;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 40px;
+    }
+
+    button {
+      font-size: 1.5rem;
+      padding: 15px 30px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    #yesBtn {
+      background-color: #ff4d6d;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    #noBtn {
+      background-color: #555;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="question">Mahi, will you be my Valentine? 💖💘</h1>
+
+  <button id="yesBtn" onclick="yesClicked()">Yes</button>
+  <button id="noBtn" onclick="noClicked()">No</button>
+
+  <script>
+    let noCount = 0;
+
+    function noClicked() {
+      noCount++;
+
+      document.getElementById("question").innerText =
+        "think again, cheater 😌";
+
+      let yesBtn = document.getElementById("yesBtn");
+      let scaleSize = 1 + noCount * 0.35;
+      yesBtn.style.transform = `scale(${scaleSize})`;
+
+      if (noCount >= 5) {
+        document.getElementById("noBtn").style.display = "none";
+        document.getElementById("question").innerText =
+          "I can't believe you rejected me so many times skank";
+      }
+    }
+
+    function yesClicked() {
+      document.body.innerHTML =
+        "<h1>You made daddy very happy :) 💕</h1>";
+    }
+  </script>
+
+</body>
+</html>
